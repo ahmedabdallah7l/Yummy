@@ -347,14 +347,12 @@ function getSearchMeals()
 {
  
  $("#searchName").keyup(async function()
- {
-  $(".loading").fadeIn(500);
+ { 
   console.log(searchWithName.value)
   var preResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchWithName.value}`)
   var searchResponseMeals =  await preResponse.json();
   var searchMeals = searchResponseMeals.meals
   var showMeals=""
-  $(".loading").fadeOut(500);
   for(let i=0; i<searchMeals.length;i++)
   {
    showMeals+=`<div class="col-lg-3 my-2 shadow">
@@ -381,13 +379,13 @@ function getFirstLetterSearchMeals()
 {
  $("#searchLetter").keyup(async function()
  {
-  $(".loading").fadeIn(500);
+  
   console.log(searchWithLetter.value)
   var preResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${ searchWithLetter.value}`)
   var searchResponseMeals =  await preResponse.json();
   var searchMeals = searchResponseMeals.meals
   var showMeals=""
-  $(".loading").fadeOut(500);
+  
   for(let i=0; i<searchMeals.length;i++)
   {
    showMeals+=`<div class="col-lg-3 my-2 shadow">
